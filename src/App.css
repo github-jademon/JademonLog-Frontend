@@ -163,15 +163,8 @@ a {
 }
 
 .button:hover {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px 0;
-  width: 100px;
   background-color: #949494;
   color: #ffffff;
-  border: #949494 1px solid;
-  border-radius: 5px;
   cursor: pointer;
 }
 
