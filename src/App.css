@@ -15,19 +15,18 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  height: 100%;
+  /* min-height: 100vh; */
+  /* height: 100%; */
+  height: 100vh;
   width: 100%;
 }
 
 .app-container {
-  /* margin-top: 61px; */
-  /* height: 100%; */
-  height: calc(100vh - 63px);
+  height: calc(100vh - 61px);
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* z-index: 0; */
+  overflow-y: auto;
 }
 
 .container {
@@ -46,108 +45,10 @@ body {
   justify-content: center;
 }
 
-.header {
-  position: sticky;
-  top: 0;
-  height: 60px;
-  width: 100%;
-  border: 0px;
-  border-bottom: 1px solid #ccc;
-  background-color: #ffffff;
-  z-index: 10;
-}
-
-.header .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0px;
-  height: 100%;
-  max-width: 1000px;
-  width: 100%;
-  margin: auto;
-}
-
-.header .container .title {
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.action-profile {
-  height: 36px;
-  cursor: pointer;
-}
-
-.header .profile {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  width: 150px;
-  border-radius: 100%;
-  cursor: pointer;
-}
-
-.header .profile img {
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-  object-fit: cover;
-}
-
-.header .profile .title {
-  font-weight: 400;
-  font-size: 14px;
-  padding: 0 10px;
-}
-
-.action-profile .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-  margin-top: 23px;
-  padding: 1px 0;
-  width: 120px;
-  height: auto;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.action-profile .container div {
-  display: flex;
-  width: 100%;
-  height: 36px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.action-profile .container div:hover {
-  display: flex;
-  width: 100%;
-  height: 36px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f9fa;
-}
-
 .container .title {
   font-weight: 500;
   font-size: 2rem;
   margin: 20px 0;
-}
-
-a {
-  text-decoration: none;
-  color: #000000;
 }
 
 .button {
@@ -177,9 +78,8 @@ a {
 }
 
 .bottom-bar {
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  left: 0;
   height: 60px;
   width: 100%;
   border: 0px;

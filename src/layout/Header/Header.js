@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   const [hoverAction, setHoverAciont] = useState(false);
@@ -35,7 +36,22 @@ const Header = () => {
                 <div className="container">
                   <div>
                     <Link to={`/mypage`} className="col-center row-center">
-                      마이페이지
+                      내 로그
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to={`/mypage`} className="col-center row-center">
+                      임시 글
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to={`/mypage`} className="col-center row-center">
+                      읽기 목록
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to={`/mypage`} className="col-center row-center">
+                      설정
                     </Link>
                   </div>
                   <div>로그아웃</div>

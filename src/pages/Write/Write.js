@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Divider, Editor, Preview } from "../components";
+import { Divider, Editor, Preview } from "../../components";
 
 const Write = () => {
   const [md, setMd] = useState("# Hello World");
@@ -18,7 +18,10 @@ const Write = () => {
 
   return (
     <>
-      <div className="container row-center">
+      <div
+        className="container row-center"
+        style={{ height: "calc(100% - 61px)" }}
+      >
         <div>
           <Editor onChange={onEditorChange} value={md} />
         </div>

@@ -118,10 +118,8 @@ const Post = () => {
   const { id } = useParams();
   console.log(id);
   return (
-    <div className="container">
-      <div>
-        <MDEditor.Markdown style={{ padding: 10 }} source={sampleData} />
-      </div>
+    <div className="container" style={{ padding: "60px 0", height: "auto" }}>
+      <MDEditor.Markdown style={{ padding: 10 }} source={sampleData} />
     </div>
   );
 };
