@@ -1,5 +1,6 @@
 import React from "react";
-import { Post } from "../../components";
+import "./Main.css";
+import { Post } from "components";
 
 const sampledata = [
   {
