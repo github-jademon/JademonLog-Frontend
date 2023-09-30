@@ -12,7 +12,7 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <Link to={`/`} className="title">
-          JademonLog
+          <img src={`${process.env.PUBLIC_URL}/JademonLog.png`} />
         </Link>
 
         <div className="row-container">
@@ -23,7 +23,11 @@ const Header = () => {
           >
             새 글 작성
           </Link>
-          <div style={{ width: "150px" }}>
+          <div
+            style={{
+              width: "150px",
+            }}
+          >
             {hoverAction ? (
               <div
                 className="action-profile"
