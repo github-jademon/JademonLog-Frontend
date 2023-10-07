@@ -19,14 +19,16 @@ const Header = () => {
           <Link
             to={`/write`}
             className="col-center row-center button"
-            style={{ width: "100px", margin: "8px" }}
+            // style={{ width: "100px", margin: "8px" }}
           >
             새 글 작성
           </Link>
           <div
-            style={{
-              width: "150px",
-            }}
+            style={
+              {
+                // width: "150px",
+              }
+            }
           >
             {hoverAction ? (
               <div
