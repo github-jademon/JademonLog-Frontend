@@ -17,7 +17,7 @@ const NotFound = () => {
         <img
           src={`${process.env.PUBLIC_URL}/icon/icon-404.png`}
           width={420}
-          className="notfound-icon"
+          className="icon--notfound"
         />
       </div>
       <div className="row-container">
