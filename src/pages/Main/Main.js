@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Main.css";
 import { Post } from "components";
 
@@ -97,6 +97,26 @@ const sampledata = [
 ];
 
 const Main = () => {
+  const app = document.querySelector(".app-container");
+  useEffect(() => {
+    app.addEventListener("scroll", handleScroll);
+    return () => {
+      app.removeEventListener("scroll", handleScroll); //clean up
+    };
+  }, []);
+  const handleScroll = (e) => {
+    const scrollTop = app.scrollTop;
+    console.log(app.scrollTop);
+    console.log("ddd");
+    let header = document.querySelector(".header");
+    if (scrollTop >= 25) {
+      header.addClass();
+      header.removeClass();
+    } else {
+      header.addClass();
+      header.removeClass();
+    }
+  };
   return (
     <div className="container">
       <div className="posts">
