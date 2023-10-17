@@ -20,7 +20,7 @@ const Write = () => {
     <>
       <div
         className="container row-center"
-        style={{ height: "calc(100% - 61px)" }}
+        style={{ height: "calc(100% - 52px)" }}
       >
         <div>
           <Editor onChange={onEditorChange} value={md} />
@@ -28,10 +28,10 @@ const Write = () => {
       </div>
       <div className="bottom-bar">
         <div className="container">
-          <div className="button">나가기</div>
+          <div className="button bottomBar__button">나가기</div>
           <div className="row-container">
-            <div className="button">임시저장</div>
-            <div className="button">출간하기</div>
+            <div className="button bottomBar__button">임시저장</div>
+            <div className="button bottomBar__button">출간하기</div>
           </div>
         </div>
       </div>
