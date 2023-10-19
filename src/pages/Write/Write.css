@@ -1,0 +1,31 @@
+.write__container {
+  height: calc(100% - 52px);
+  width: 100%;
+  justify-content: center;
+}
+
+.writeBar {
+  position: fixed;
+  bottom: 0;
+  height: 56px;
+  width: 100%;
+  border: 0px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.writeBar__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+  height: 100%;
+  max-width: 1044px;
+  width: 100%;
+  margin: auto;
+}
+
+.writeBar__button {
+  margin: 0 10px;
+}
