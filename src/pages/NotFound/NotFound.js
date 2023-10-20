@@ -12,15 +12,15 @@ const NotFound = () => {
 
   return (
     <div className="container">
-      <div className="title">Page not found 404</div>
-      <div style={{ margin: "20px auto 40px" }}>
+      <div className="title notfound__title">Page not found 404</div>
+      <div className="notfound__img">
         <img
           src={`${process.env.PUBLIC_URL}/icon/icon-404.png`}
           width={420}
           className="icon--notfound"
         />
       </div>
-      <div className="row-container">
+      <div className="notfound__buttonBar">
         <div className="button" onClick={() => goHome()}>
           홈으로
         </div>
