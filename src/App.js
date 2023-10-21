@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "layout/Header/Header";
+import Header from "layout/header/Header";
 import { Main, Mypage, NotFound, PostDetail, Write } from "./pages";
 import { useEffect } from "react";
 

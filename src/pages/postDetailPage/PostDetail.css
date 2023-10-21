@@ -1,0 +1,76 @@
+.postDetail__container {
+  margin: 64px auto;
+  width: 768px;
+}
+
+.postDetail__detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 30px 0;
+}
+
+.postDetail__information {
+  display: flex;
+  align-items: center;
+}
+
+.postDetail__writer {
+  display: flex;
+  align-items: center;
+}
+
+.postDetail__writerImg {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.postDetail__writerName {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 0 0 10px;
+  width: auto;
+}
+
+.postDetail__detail--separator {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0 10px;
+  color: #495057;
+  width: auto;
+}
+
+.postDetail__date {
+  font-weight: 400;
+  font-size: 14px;
+  color: #495057;
+  width: auto;
+}
+
+.postDetail__buttonBar {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postDetail__button {
+  border: none;
+}
+
+.postDetail__button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.postDetail__title {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.postDetail__content {
+  margin: 30px 0 0 0;
+  padding: 10px 0;
+}

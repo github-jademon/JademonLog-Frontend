@@ -13,8 +13,8 @@ const Post = ({ data }) => {
         <div className="post__desc">{data.desc}</div>
         <div className="post__subInfo">
           <div className="post__element">{data.date}</div>
-          <div className="post__element">·</div>
-          <div className="post__element">{data.commentsCount}개의 댓글</div>
+          {/* <div className="post__element">·</div> */}
+          {/* <div className="post__element">{data.commentsCount}개의 댓글</div> */}
         </div>
       </div>
       <div className="post__footer">
@@ -24,9 +24,7 @@ const Post = ({ data }) => {
             by <strong>{data.writer.name}</strong>
           </div>
         </div>
-        <div>
-          <strong>❤︎</strong> {data.likesCount}
-        </div>
+        <div>{/* <strong>❤︎</strong> {data.likesCount} */}</div>
       </div>
     </Link>
   );
