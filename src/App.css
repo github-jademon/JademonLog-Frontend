@@ -7,6 +7,12 @@ body {
   padding: 0;
 }
 
+div {
+  font-weight: 400;
+  font-size: 14px;
+  /* padding: 0 10px; */
+}
+
 input {
   border: none;
   outline: none;

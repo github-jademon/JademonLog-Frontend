@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "layout/header/Header";
-import { Main, Mypage, NotFound, PostDetail, Write } from "./pages";
+import { Main, Mypage, NotFound, PostDetail, Setting, Write } from "./pages";
 import { useEffect } from "react";
 
 function App() {
@@ -29,8 +29,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />}></Route>
             <Route path="/post/:id" element={<PostDetail />}></Route>
-            <Route path="/mypage" element={<Mypage />}></Route>
             <Route path="/write" element={<Write />}></Route>
+            <Route path="/mypage" element={<Mypage />}></Route>
+            <Route path="/saves" element={<Mypage />}></Route>
+            <Route path="/lists" element={<Mypage />}></Route>
+            <Route path="/setting" element={<Setting />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>

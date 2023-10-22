@@ -8,6 +8,11 @@ const Header = () => {
     name: "Jademon",
     img: `${process.env.PUBLIC_URL}/404.png`,
   });
+
+  const logout = () => {
+    return;
+  };
+
   return (
     <div className="header">
       <div className="container header__container">
@@ -39,21 +44,23 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="header__element">
-                    <Link to={`/mypage`} className="header__link">
+                    <Link to={`/saves`} className="header__link">
                       임시 글
                     </Link>
                   </div>
                   <div className="header__element">
-                    <Link to={`/mypage`} className="header__link">
+                    <Link to={`/lists`} className="header__link">
                       읽기 목록
                     </Link>
                   </div>
                   <div className="header__element">
-                    <Link to={`/mypage`} className="header__link">
+                    <Link to={`/setting`} className="header__link">
                       설정
                     </Link>
                   </div>
-                  <div className="header__element">로그아웃</div>
+                  <div className="header__element" onClick={() => logout()}>
+                    로그아웃
+                  </div>
                 </div>
               </div>
             ) : (
