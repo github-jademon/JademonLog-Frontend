@@ -90,6 +90,16 @@ a {
   color: #000000;
 }
 
+div {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
 .app-container::-webkit-scrollbar {
   width: 5px;
 }

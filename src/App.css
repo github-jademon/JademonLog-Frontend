@@ -7,16 +7,6 @@ body {
   padding: 0;
 }
 
-div {
-  font-weight: 400;
-  font-size: 14px;
-}
-
-input {
-  border: none;
-  outline: none;
-}
-
 #root {
   height: 100%;
   min-height: 100vh;
