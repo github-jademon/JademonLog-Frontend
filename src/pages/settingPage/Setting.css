@@ -1,6 +1,6 @@
 .setting__container {
   width: 768px;
-  margin: 64px auto;
+  margin: 56px auto;
 }
 
 .setting__title {
@@ -21,6 +21,10 @@
   flex-direction: column;
 }
 
+.setting__profileElement {
+  margin: 0 0 48px 0;
+}
+
 .setting__element--between {
   justify-content: space-between;
   align-items: center;
@@ -39,7 +43,7 @@
   background-color: #f1f3f5;
 }
 
-.setting__profileElement {
+.setting__profileImgElement {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,6 +81,46 @@
   border-bottom: #c5c5c5 1px solid;
   background-color: #ffffff;
   color: #c5c5c5;
+}
+
+.setting__buttonRadioElements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 58px;
+}
+
+.setting__buttonRadioElement {
+  display: flex;
+}
+
+.setting__buttonName {
+  width: 180px;
+}
+
+.setting__buttonRadio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px;
+  width: 42px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #868e96;
+  transition: all 0.125s ease-in 0s;
+  justify-content: flex-start;
+}
+
+.setting__buttonRadio--click {
+  background-color: #000000;
+  justify-content: flex-end;
+}
+
+.setting__buttonRadio--circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
 }
 
 .profile__button {

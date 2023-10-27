@@ -1,5 +1,6 @@
 import React from "react";
 import "./Setting.css";
+import RadioButton from "components/RadioButton";
 
 const sampleData = {
   img: `${process.env.PUBLIC_URL}/404.png`,
@@ -10,8 +11,8 @@ const sampleData = {
 const Setting = () => {
   return (
     <div className="container setting__container">
-      <div className="setting__element">
-        <div className="setting__profileElement">
+      <div className="setting__element setting__profileElement">
+        <div className="setting__profileImgElement">
           <img className="setting__profileImg" src={sampleData.img} />
           <div className="button profile__button">이미지 업로드</div>
           <div className="button profile__button">이미지 제거</div>
@@ -77,14 +78,14 @@ const Setting = () => {
       <div className="setting__element setting__element--col">
         <div className="setting__element">
           <div className="setting__title">이메일 수신 설정</div>
-          <div>
-            <div>
-              <div>댓글 알림</div>
-              <div></div>
+          <div className="setting__buttonRadioElements">
+            <div className="setting__buttonRadioElement">
+              <div className="setting__buttonName">댓글 알림</div>
+              <RadioButton />
             </div>
-            <div>
-              <div>벨로그 업데이트 소식</div>
-              <div></div>
+            <div className="setting__buttonRadioElement">
+              <div className="setting__buttonName">벨로그 업데이트 소식</div>
+              <RadioButton />
             </div>
           </div>
         </div>
