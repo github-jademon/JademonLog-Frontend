@@ -6,6 +6,7 @@ const Mypage = () => {
   return (
     <div className="container">
       <div className="title">Mypage</div>
+      <div>Jademon</div>
     </div>
   );
 };

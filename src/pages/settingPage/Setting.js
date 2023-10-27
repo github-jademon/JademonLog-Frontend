@@ -6,6 +6,15 @@ const sampleData = {
   img: `${process.env.PUBLIC_URL}/404.png`,
   name: "hello",
   describe: "&nbsp;",
+  title: "jademon.log",
+  social: {
+    email: "j2python@gmail.com",
+    github: "github-jademon",
+    twitter: null,
+    facebook: null,
+    homepage:
+      "https://jademon.notion.site/jademon/145a728e77bd4e649ff54eca31689e6e",
+  },
 };
 
 const Setting = () => {
@@ -26,9 +35,9 @@ const Setting = () => {
       </div>
       <div className="setting__element setting__element--col">
         <div className="setting__element">
-          <div className="setting__title">벨로그 제목</div>
+          <div className="setting__title">로그 제목</div>
           <div className="setting__element setting__element--between">
-            <div>jademon.log</div>
+            <div>{sampleData.title}</div>
             <div className="button setting__button">수정</div>
           </div>
         </div>
@@ -42,20 +51,36 @@ const Setting = () => {
           <span className="setting__title">소셜 정보</span>
           <div className="setting__element setting__element--between">
             <div>
-              <div>
-                <span className="setting__linkTitle">이메일</span>
-                <span>j2python@gmail.com</span>
-              </div>
-              <div>
-                <span className="setting__linkTitle">깃허브</span>
-                <span> github-jademon</span>
-              </div>
-              <div>
-                <span className="setting__linkTitle">홈페이지</span>
-                <span>
-                  https://jademon.notion.site/jademon/145a728e77bd4e649ff54eca31689e6e
-                </span>
-              </div>
+              {sampleData.social.email ? (
+                <div>
+                  <span className="setting__linkTitle">이메일</span>
+                  <span>{sampleData.social.email}</span>
+                </div>
+              ) : null}
+              {sampleData.social.github ? (
+                <div>
+                  <span className="setting__linkTitle">깃허브</span>
+                  <span>{sampleData.social.github}</span>
+                </div>
+              ) : null}
+              {sampleData.social.twitter ? (
+                <div>
+                  <span className="setting__linkTitle">트위터</span>
+                  <span>{sampleData.social.twitter}</span>
+                </div>
+              ) : null}
+              {sampleData.social.facebook ? (
+                <div>
+                  <span className="setting__linkTitle">페이스북</span>
+                  <span>{sampleData.social.facebook}</span>
+                </div>
+              ) : null}
+              {sampleData.social.homepage ? (
+                <div>
+                  <span className="setting__linkTitle">홈페이지</span>
+                  <span>{sampleData.social.homepage}</span>
+                </div>
+              ) : null}
             </div>
             <div className="button setting__button">수정</div>
           </div>
@@ -84,7 +109,7 @@ const Setting = () => {
               <RadioButton />
             </div>
             <div className="setting__buttonRadioElement">
-              <div className="setting__buttonName">벨로그 업데이트 소식</div>
+              <div className="setting__buttonName">로그 업데이트 소식</div>
               <RadioButton />
             </div>
           </div>

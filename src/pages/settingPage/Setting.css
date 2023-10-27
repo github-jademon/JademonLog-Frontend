@@ -9,6 +9,10 @@
   font-size: 18px;
 }
 
+.setting__profileDescibe {
+  margin: 0 0 20px 0;
+}
+
 .setting__element {
   display: flex;
   width: 100%;
