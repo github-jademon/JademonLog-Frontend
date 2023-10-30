@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./Setting.css";
 
 const RadioButton = () => {
   const [button, setButton] = useState(false);
