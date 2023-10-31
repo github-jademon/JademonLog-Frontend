@@ -4,13 +4,17 @@
 }
 
 .setting__title {
-  width: 150px;
+  width: 170px;
   font-weight: 500;
   font-size: 18px;
 }
 
 .setting__profileDescibe {
   margin: 0 0 20px 0;
+}
+
+.setting-profileImgInput {
+  display: none;
 }
 
 .setting__element {
