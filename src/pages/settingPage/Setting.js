@@ -21,6 +21,7 @@ const sampleData = {
 const Setting = () => {
   const [profileImg, setProifileImg] = useState(sampleData.img);
   const [describe, setDescribe] = useState(sampleData.describe);
+  const [title, setTitle] = useState(sampleData.title);
 
   const imgRef = useRef();
 
@@ -106,7 +107,7 @@ const Setting = () => {
         description="개인 페이지의 좌측 상단에 나타나는 페이지 제목입니다."
       >
         <div className="setting__element setting__element--between">
-          <div>{sampleData.title}</div>
+          <div>{title}</div>
           <div className="button setting__button" onClick={() => updateTitle()}>
             수정
           </div>
