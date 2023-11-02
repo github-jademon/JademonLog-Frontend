@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./Setting.css";
-import { RadioButton, SettingElement, SocialElement } from "components";
+import { Button, RadioButton, SettingElement, SocialElement } from "components";
 import axios from "axios";
 
 const sampleData = {
@@ -47,6 +47,10 @@ const Setting = () => {
     };
   };
 
+  const clickInputFileImg = () => {
+    document.getElementById("profileImg").click();
+  };
+
   const deleteImg = () => {
     setProifileImg(`${process.env.PUBLIC_URL}/404.png`);
     // axios.post('/', {
@@ -83,23 +87,22 @@ const Setting = () => {
             onChange={() => uploadImg()}
             ref={imgRef}
           />
-          <label className="button profile__button" htmlFor="profileImg">
-            이미지 업로드
-          </label>
-          <div className="button profile__button" onClick={() => deleteImg()}>
-            이미지 제거
-          </div>
+          <Button
+            type="profile"
+            value="이미지 업로드"
+            onClick={clickInputFileImg}
+          />
+          <Button
+            type="profile"
+            value="이미지 제거"
+            onClick={clickInputFileImg}
+          />
         </div>
         <div className="setting__profile--separator"></div>
         <div>
           <div className="setting__profileName">{sampleData.name}</div>
           <div className="setting__profileDescibe">{describe}</div>
-          <div
-            className="button setting__button"
-            onClick={() => updateDescribe()}
-          >
-            수정
-          </div>
+          <Button type="setting" value="수정" onClick={updateDescribe} />
         </div>
       </div>
       <SettingElement
@@ -108,9 +111,7 @@ const Setting = () => {
       >
         <div className="setting__element setting__element--between">
           <div>{title}</div>
-          <div className="button setting__button" onClick={() => updateTitle()}>
-            수정
-          </div>
+          <Button type="setting" value="수정" onClick={updateTitle} />
         </div>
       </SettingElement>
       <div className="setting__element--separator"></div>
@@ -126,12 +127,7 @@ const Setting = () => {
             <SocialElement name="페이스북" value={sampleData.social.facebook} />
             <SocialElement name="홈페이지" value={sampleData.social.homepage} />
           </div>
-          <div
-            className="button setting__button"
-            onClick={() => updateSocial()}
-          >
-            수정
-          </div>
+          <Button type="setting" value="수정" onClick={updateSocial} />
         </div>
       </SettingElement>
       <div className="setting__element--separator"></div>
@@ -141,9 +137,7 @@ const Setting = () => {
       >
         <div className="setting__element setting__element--between">
           <div></div>
-          <div className="button setting__button" onClick={() => updateEmail()}>
-            변경
-          </div>
+          <Button type="setting" value="변경" onClick={updateEmail} />
         </div>
       </SettingElement>
       <div className="setting__element--separator"></div>
@@ -164,9 +158,7 @@ const Setting = () => {
         title="회원 탈퇴"
         description="탈퇴 시 작성하신 포스트 및 댓글이 모두 삭제되며 복구되지 않습니다."
       >
-        <div className="button leave__button" onClick={() => deleteAccount()}>
-          회원 탈퇴
-        </div>
+        <Button type="leave" value="회원 탈퇴" onClick={deleteAccount} />
       </SettingElement>
     </div>
   );

@@ -1,3 +1,4 @@
+export { default as Button } from "./common/Button.js";
 export { default as Editor } from "./Editor.js";
 export { default as Post } from "./post/Post.js";
 export { default as RadioButton } from "./setting/RadioButton";
