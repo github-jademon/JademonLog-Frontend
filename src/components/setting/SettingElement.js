@@ -14,7 +14,9 @@ const SettingElement = ({
   const [value, setValue] = useState(prevValue);
   const func = () => {
     setChange(!change);
-    onClick();
+    if (change === false) {
+      onClick();
+    }
   };
   if (type === "button") {
     return (

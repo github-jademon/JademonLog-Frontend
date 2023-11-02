@@ -39,12 +39,15 @@ const useInput = ({ prev, validator }) => {
 const Setting = () => {
   // const maxLen = (value) => value.length <= 10; // 상황에 따라 원하는 조건을 넣어준다
   // const { value, onChange } = useInput(maxLen);
+  // const [describe, setDescribe] = useInput({
+  //   prev: sampleData.describe,
+  // });
+
   const [profileImg, setProifileImg] = useState(sampleData.img);
-  // const [describe, setDescribe] = useState(sampleData.describe);
-  const [describe, setDescribe] = useInput({
-    prev: sampleData.describe,
-  });
+  const [social, setSocial] = useState(sampleData.social);
+  const [describe, setDescribe] = useState(sampleData.describe);
   const [title, setTitle] = useState(sampleData.title);
+  const [email, setEmail] = useState("");
 
   const uploadImg = (e) => {
     setPreviewImg(e);
@@ -78,10 +81,8 @@ const Setting = () => {
   };
 
   const deleteImg = () => {
-    setProifileImg(`${process.env.PUBLIC_URL}/404.png`);
-    // axios.post('/', {
-    //   img: "img"
-    // })
+    setProifileImg();
+    // axios.delete('/')
     // .then(function (response) {
     //   console.log(response);
     // })
@@ -90,22 +91,86 @@ const Setting = () => {
     // });
   };
 
-  const updateDescribe = () => {};
+  const updateDescribe = () => {
+    const body = {
+      describe: describe,
+    };
+    // axios.post('/', body)
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+  };
 
-  const updateTitle = () => {};
+  const updateTitle = () => {
+    const body = {
+      title: title,
+    };
+    // axios.post('/', body)
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+  };
 
-  const updateSocial = () => {};
+  const updateSocial = () => {
+    const body = {
+      social: {
+        email: social.email,
+        github: social.github,
+        twitter: social.twitter,
+        facebook: social.facebook,
+        homepage: social.homepage,
+      },
+    };
+    // axios.post('/', body)
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+  };
 
-  const updateEmail = () => {};
+  const updateEmail = () => {
+    const body = {
+      email: email,
+    };
+    setEmail("");
+    // axios.post('/', body)
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+  };
 
-  const deleteAccount = () => {};
+  const deleteAccount = () => {
+    // axios.delete('/')
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });1
+  };
 
   return (
     <div className="container setting__container">
       <div className="setting__element setting__profileElement">
         <div className="setting__profileImgElement">
-          {profileImg && (
+          {profileImg ? (
             <img className="setting__profileImg" src={profileImg} />
+          ) : (
+            <img
+              className="setting__profileImg"
+              src={`${process.env.PUBLIC_URL}/404.png`}
+            />
           )}
           <input
             className="setting-profileImgInput"
@@ -143,7 +208,7 @@ const Setting = () => {
         description="포스트 및 블로그에서 보여지는 프로필에 공개되는 소셜 정보입니다."
         name="수정"
         type="social"
-        prevValue={sampleData.social}
+        prevValue={social}
         onClick={updateSocial}
       ></SettingElement>
       <Separator />
@@ -152,6 +217,7 @@ const Setting = () => {
         description="회원 인증 또는 시스템에서 발송하는 이메일을 수신하는 주소입니다."
         name="변경"
         type="button"
+        prevValue={email}
         onClick={updateEmail}
       >
         <div></div>
