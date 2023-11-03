@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, SocialElement } from "components";
 
 const SettingElement = ({
@@ -10,6 +10,7 @@ const SettingElement = ({
   prevValue,
   type,
 }) => {
+  const [windowWidth, setWindowWidth] = useState();
   const [change, setChange] = useState(true);
   const [value, setValue] = useState(prevValue);
   const func = () => {
@@ -18,13 +19,37 @@ const SettingElement = ({
       onClick();
     }
   };
-  if (type === "button") {
+  useEffect(() => {
+    function resize() {
+      setWindowWidth(
+        window.matchMedia("screen and (min-width: 768px)").matches
+      );
+    }
+    window.addEventListener("resize", resize);
+    return () => {
+      document.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  if (type === "title") {
+    return (
+      <div>
+        <div className="setting__profileName">{title}</div>
+        <div className="setting__profileDescibe">{prevValue}</div>
+        <Button type="setting" name={name} onClick={func} />
+      </div>
+    );
+  } else if (type === "button") {
     return (
       <div className="setting__element setting__element--col">
-        <div className="setting__element">
+        <div
+          className={
+            "setting__element " + (windowWidth ? "" : "setting__element--phone")
+          }
+        >
           <div className="setting__title">{title}</div>
           <div className="setting__element setting__element--between">
-            <div className="setting__element setting__element--between">
+            <div className="setting__element setting__element--width setting__element--between">
               {change ? (
                 <div className="setting__subElement">{value}</div>
               ) : (
@@ -46,10 +71,14 @@ const SettingElement = ({
   } else if (type === "social") {
     return (
       <div className="setting__element setting__element--col">
-        <div className="setting__element">
+        <div
+          className={
+            "setting__element " + (windowWidth ? "" : "setting__element--phone")
+          }
+        >
           <div className="setting__title">{title}</div>
           <div className="setting__element setting__element--between">
-            <div className="setting__element setting__element--between">
+            <div className="setting__element setting__element--width setting__element--between">
               {change ? (
                 <div className="setting__subElement">
                   <SocialElement name="이메일" value={value.email} />
@@ -99,10 +128,14 @@ const SettingElement = ({
   } else {
     return (
       <div className="setting__element setting__element--col">
-        <div className="setting__element">
+        <div
+          className={
+            "setting__element " + (windowWidth ? "" : "setting__element--phone")
+          }
+        >
           <div className="setting__title">{title}</div>
           <div className="setting__element setting__element--between">
-            <div className="setting__element setting__element--between">
+            <div className="setting__element setting__element--width setting__element--between">
               {children}
             </div>
           </div>

@@ -16,9 +16,9 @@ const SocialElement = ({ name, prevValue, type }) => {
   }
   if (value) {
     return (
-      <div>
+      <div className="setting__socialElement">
         <span className="setting__linkTitle">{name}</span>
-        <span>{value}</span>
+        <span className="setting__linkText">{value}</span>
       </div>
     );
   }

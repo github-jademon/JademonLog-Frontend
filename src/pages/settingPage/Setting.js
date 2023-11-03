@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Setting.css";
-import { Button, Separator, SettingElement, SocialElement } from "components";
+import { Button, Separator, SettingElement } from "components";
 import axios from "axios";
 import RadioElement from "components/setting/RadioElement";
 
@@ -43,11 +43,25 @@ const Setting = () => {
   //   prev: sampleData.describe,
   // });
 
+  const [windowWidth, setWindowWidth] = useState();
+
   const [profileImg, setProifileImg] = useState(sampleData.img);
   const [social, setSocial] = useState(sampleData.social);
   const [describe, setDescribe] = useState(sampleData.describe);
   const [title, setTitle] = useState(sampleData.title);
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    function resize() {
+      setWindowWidth(
+        window.matchMedia("screen and (min-width: 768px)").matches
+      );
+    }
+    window.addEventListener("resize", resize);
+    return () => {
+      document.removeEventListener("resize", resize);
+    };
+  }, []);
 
   const uploadImg = (e) => {
     setPreviewImg(e);
@@ -160,40 +174,84 @@ const Setting = () => {
     // });1
   };
 
+  console.log(window.matchMedia("screen and (min-width: 768px)").matches);
+
   return (
     <div className="container setting__container">
-      <div className="setting__element setting__profileElement">
-        <div className="setting__profileImgElement">
-          {profileImg ? (
-            <img className="setting__profileImg" src={profileImg} />
-          ) : (
-            <img
-              className="setting__profileImg"
-              src={`${process.env.PUBLIC_URL}/404.png`}
+      {windowWidth === true ? (
+        <div className="setting__element setting__profileElement">
+          <div className="setting__profileImgElement">
+            {profileImg ? (
+              <img className="setting__profileImg" src={profileImg} />
+            ) : (
+              <img
+                className="setting__profileImg"
+                src={`${process.env.PUBLIC_URL}/404.png`}
+              />
+            )}
+            <input
+              className="setting-profileImgInput"
+              type="file"
+              accept="image/*"
+              id="profileImg"
+              onChange={uploadImg}
             />
-          )}
-          <input
-            className="setting-profileImgInput"
-            type="file"
-            accept="image/*"
-            id="profileImg"
-            onChange={uploadImg}
-          />
-          <Button
-            type="profile"
-            name="이미지 업로드"
-            onClick={clickInputFileImg}
-          />
-          <Button type="profile" name="이미지 제거" onClick={deleteImg} />
-        </div>
+            <Button
+              type="profile"
+              name="이미지 업로드"
+              onClick={clickInputFileImg}
+            />
+            <Button type="profile" name="이미지 제거" onClick={deleteImg} />
+          </div>
 
-        <Separator type="col" />
-        <div>
-          <div className="setting__profileName">{sampleData.name}</div>
-          <div className="setting__profileDescibe">{describe}</div>
-          <Button type="setting" name="수정" onClick={updateDescribe} />
+          <Separator type="col" />
+          <SettingElement
+            title={sampleData.name}
+            name="수정"
+            type="title"
+            onClick={updateDescribe}
+            prevValue={describe}
+          ></SettingElement>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="setting__element setting__profileElement">
+            <div className="setting__profileImgElement">
+              {profileImg ? (
+                <img className="setting__profileImg" src={profileImg} />
+              ) : (
+                <img
+                  className="setting__profileImg"
+                  src={`${process.env.PUBLIC_URL}/404.png`}
+                />
+              )}
+              <input
+                className="setting-profileImgInput"
+                type="file"
+                accept="image/*"
+                id="profileImg"
+                onChange={uploadImg}
+              />
+              <Button
+                type="profile"
+                name="이미지 업로드"
+                onClick={clickInputFileImg}
+              />
+              <Button type="profile" name="이미지 제거" onClick={deleteImg} />
+            </div>
+          </div>
+
+          <Separator type="row" />
+          <SettingElement
+            title={sampleData.name}
+            name="수정"
+            type="button"
+            onClick={updateDescribe}
+            prevValue={describe}
+          ></SettingElement>
+        </>
+      )}
+
       <SettingElement
         title="로그 제목"
         description="개인 페이지의 좌측 상단에 나타나는 페이지 제목입니다."
