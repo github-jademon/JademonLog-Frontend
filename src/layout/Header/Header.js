@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { HeaderElement } from "components";
 
 const Header = () => {
   const [hoverAction, setHoverAciont] = useState(false);
@@ -38,29 +39,15 @@ const Header = () => {
                   <div className="header__userName">{user.name}</div>
                 </div>
                 <div className="container header__profileContainer">
-                  <div className="header__element">
-                    <Link to={`/mypage`} className="header__link">
-                      내 로그
-                    </Link>
-                  </div>
-                  <div className="header__element">
-                    <Link to={`/saves`} className="header__link">
-                      임시 글
-                    </Link>
-                  </div>
-                  <div className="header__element">
-                    <Link to={`/lists`} className="header__link">
-                      읽기 목록
-                    </Link>
-                  </div>
-                  <div className="header__element">
-                    <Link to={`/setting`} className="header__link">
-                      설정
-                    </Link>
-                  </div>
-                  <div className="header__element" onClick={() => logout()}>
-                    로그아웃
-                  </div>
+                  <HeaderElement name="내 로그" onClick="/mypage" />
+                  <HeaderElement name="임시 글" onClick="/saves" />
+                  <HeaderElement name="읽기 목록" onClick="/lists" />
+                  <HeaderElement name="설정" onClick="/setting" />
+                  <HeaderElement
+                    name="로그아웃"
+                    onClick={logout()}
+                    type="func"
+                  />
                 </div>
               </div>
             ) : (
