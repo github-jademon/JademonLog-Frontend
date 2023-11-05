@@ -60,6 +60,7 @@ const Setting = () => {
         window.matchMedia("screen and (min-width: 768px)").matches
       );
     }
+    resize();
     window.addEventListener("resize", resize);
     return () => {
       document.removeEventListener("resize", resize);
@@ -244,13 +245,13 @@ const Setting = () => {
             </div>
           </div>
 
-          <Separator type="row" />
           <SettingElement
             name="수정"
             type="profile1"
             onClick={updateProfile}
             prevValue={profile}
           ></SettingElement>
+          <Separator type="row" />
         </>
       )}
 

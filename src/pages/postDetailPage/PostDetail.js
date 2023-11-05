@@ -153,7 +153,9 @@ const Post = () => {
           <div className="button postDetail__button">삭제</div>
         </div>
       </div>
-      <img className="postDetail__img" src={sampleData.img} />
+      <div className="postDetail__imgBox">
+        <img className="postDetail__img" src={sampleData.img} />
+      </div>
       <MDEditor.Markdown
         className="postDetail__content"
         source={sampleData.value}
