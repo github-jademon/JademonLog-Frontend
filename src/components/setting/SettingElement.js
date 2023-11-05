@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, SocialElement } from "components";
+import { Button, ProfileElement, SocialElement } from "components";
 
 const SettingElement = ({
   title,
@@ -31,12 +31,56 @@ const SettingElement = ({
     };
   }, []);
 
-  if (type === "title") {
+  if (type === "profile") {
     return (
       <div>
-        <div className="setting__profileName">{title}</div>
-        <div className="setting__profileDescibe">{prevValue}</div>
+        {change ? (
+          <div>
+            <ProfileElement prevValue={value.name} type="name" />
+            <ProfileElement prevValue={value.describe} type="describe" />
+          </div>
+        ) : (
+          <div>
+            <ProfileElement prevValue={value.name} />
+            <ProfileElement prevValue={value.describe} />
+          </div>
+        )}
         <Button type="setting" name={name} onClick={func} />
+      </div>
+    );
+  } else if (type === "profile1") {
+    return (
+      <div className="setting__element setting__element--col">
+        <div
+          className={
+            "setting__element " + (windowWidth ? "" : "setting__element--phone")
+          }
+        >
+          {change ? (
+            <div>
+              <div className="setting__title">{value.name}</div>
+              <div className="setting__element setting__element--between">
+                <div className="setting__element setting__element--width setting__element--between">
+                  <div className="setting__subElement">{value.describe}</div>
+                  <Button type="setting" name={name} onClick={func} />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className="setting__element setting__element--width setting__element--between">
+                <div>
+                  <ProfileElement prevValue={value.name} />
+                  <ProfileElement prevValue={value.describe} />
+                </div>
+                <Button type="setting" name={name} onClick={func} />
+              </div>
+            </div>
+          )}
+        </div>
+        {description ? (
+          <div className="setting__description">{description}</div>
+        ) : null}
       </div>
     );
   } else if (type === "button") {

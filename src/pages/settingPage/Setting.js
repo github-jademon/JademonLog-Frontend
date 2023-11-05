@@ -6,8 +6,10 @@ import RadioElement from "components/setting/RadioElement";
 
 const sampleData = {
   img: `${process.env.PUBLIC_URL}/404.png`,
-  name: "hello",
-  describe: "&nbsp;",
+  profile: {
+    name: "hello",
+    describe: "&nbsp;",
+  },
   title: "jademon.log",
   social: {
     email: "j2python@gmail.com",
@@ -45,9 +47,10 @@ const Setting = () => {
 
   const [windowWidth, setWindowWidth] = useState();
 
-  const [profileImg, setProifileImg] = useState(sampleData.img);
+  const [profileImg, setProfileImg] = useState(sampleData.img);
+  const [profile, setProfile] = useState(sampleData.profile);
   const [social, setSocial] = useState(sampleData.social);
-  const [describe, setDescribe] = useState(sampleData.describe);
+  // const [describe, setDescribe] = useState(sampleData.describe);
   const [title, setTitle] = useState(sampleData.title);
   const [email, setEmail] = useState("");
 
@@ -83,7 +86,7 @@ const Setting = () => {
     if (file) {
       reader.readAsDataURL(file);
       reader.onloadend = () => {
-        setProifileImg(reader.result);
+        setProfileImg(reader.result);
         // dispatch(triggerImageCropModal()); // 사진 업로드 하면 crop창 띄움
         e.target.value = "";
       };
@@ -95,7 +98,7 @@ const Setting = () => {
   };
 
   const deleteImg = () => {
-    setProifileImg();
+    setProfileImg();
     // axios.delete('/')
     // .then(function (response) {
     //   console.log(response);
@@ -105,9 +108,10 @@ const Setting = () => {
     // });
   };
 
-  const updateDescribe = () => {
+  const updateProfile = () => {
     const body = {
-      describe: describe,
+      name: profile.name,
+      describe: profile.describe,
     };
     // axios.post('/', body)
     // .then(function (response) {
@@ -206,11 +210,10 @@ const Setting = () => {
 
           <Separator type="col" />
           <SettingElement
-            title={sampleData.name}
             name="수정"
-            type="title"
-            onClick={updateDescribe}
-            prevValue={describe}
+            type="profile"
+            onClick={updateProfile}
+            prevValue={profile}
           ></SettingElement>
         </div>
       ) : (
@@ -243,11 +246,10 @@ const Setting = () => {
 
           <Separator type="row" />
           <SettingElement
-            title={sampleData.name}
             name="수정"
-            type="button"
-            onClick={updateDescribe}
-            prevValue={describe}
+            type="profile1"
+            onClick={updateProfile}
+            prevValue={profile}
           ></SettingElement>
         </>
       )}
