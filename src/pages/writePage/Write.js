@@ -13,6 +13,10 @@ const Write = () => {
     window.location.href = "/";
   }
 
+  function upload() {
+    window.location.href = "/upload";
+  }
+
   return (
     <>
       <div className="container write__container">
@@ -31,7 +35,9 @@ const Write = () => {
           </div>
           <div className="row-container">
             <div className="button writeBar__button">임시저장</div>
-            <div className="button writeBar__button">출간하기</div>
+            <div className="button writeBar__button" onClick={upload}>
+              출간하기
+            </div>
           </div>
         </div>
       </div>

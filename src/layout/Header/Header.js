@@ -41,7 +41,7 @@ const Header = () => {
                 <div className="container header__profileContainer">
                   <HeaderElement name="내 로그" onClick="/mypage" />
                   <HeaderElement name="임시 글" onClick="/saves" />
-                  <HeaderElement name="읽기 목록" onClick="/lists" />
+                  {/* <HeaderElement name="읽기 목록" onClick="/lists" /> */}
                   <HeaderElement name="설정" onClick="/setting" />
                   <HeaderElement
                     name="로그아웃"

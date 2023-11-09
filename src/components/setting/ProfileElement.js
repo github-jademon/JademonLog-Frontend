@@ -9,13 +9,11 @@ const ProfileElement = ({ prevValue, type }) => {
     return <div className="setting__profileDescribe">{value}</div>;
   } else {
     return (
-      <div className="setting__socialElement">
-        <input
-          className="setting__subElement setting__input"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-      </div>
+      <input
+        className=" setting__input"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
     );
   }
 };

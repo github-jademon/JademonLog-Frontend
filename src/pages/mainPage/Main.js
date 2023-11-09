@@ -98,7 +98,7 @@ const sampledata = [
 
 const Main = () => {
   return (
-    <div className="container">
+    <div className="container mainContainer">
       <div className="posts">
         {sampledata.map((v, i) => {
           return <Post data={v} key={i}></Post>;

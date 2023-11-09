@@ -25,9 +25,9 @@ const Button = ({ type, name, onClick }) => {
         {name}
       </div>
     );
-  } else if (type === "setting") {
+  } else if (type === "underscore") {
     return (
-      <div className="button setting__button" onClick={onClick}>
+      <div className="button underscore__button" onClick={onClick}>
         {name}
       </div>
     );

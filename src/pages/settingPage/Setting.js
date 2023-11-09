@@ -182,78 +182,41 @@ const Setting = () => {
   console.log(window.matchMedia("screen and (min-width: 768px)").matches);
 
   return (
-    <div className="container setting__container">
-      {windowWidth === true ? (
-        <div className="setting__element setting__profileElement">
-          <div className="setting__profileImgElement">
-            {profileImg ? (
-              <img className="setting__profileImg" src={profileImg} />
-            ) : (
-              <img
-                className="setting__profileImg"
-                src={`${process.env.PUBLIC_URL}/404.png`}
-              />
-            )}
-            <input
-              className="setting-profileImgInput"
-              type="file"
-              accept="image/*"
-              id="profileImg"
-              onChange={uploadImg}
+    <div className="container setting__container container--768">
+      <div className="setting__element setting__profileElement">
+        <div className="setting__profileImgElement">
+          {profileImg ? (
+            <img className="setting__profileImg" src={profileImg} />
+          ) : (
+            <img
+              className="setting__profileImg"
+              src={`${process.env.PUBLIC_URL}/404.png`}
             />
-            <Button
-              type="profile"
-              name="이미지 업로드"
-              onClick={clickInputFileImg}
-            />
-            <Button type="profile" name="이미지 제거" onClick={deleteImg} />
-          </div>
-
-          <Separator type="col" />
-          <SettingElement
-            name="수정"
+          )}
+          <input
+            className="setting-profileImgInput"
+            type="file"
+            accept="image/*"
+            id="profileImg"
+            onChange={uploadImg}
+          />
+          <Button
             type="profile"
-            onClick={updateProfile}
-            prevValue={profile}
-          ></SettingElement>
+            name="이미지 업로드"
+            onClick={clickInputFileImg}
+          />
+          <Button type="profile" name="이미지 제거" onClick={deleteImg} />
         </div>
-      ) : (
-        <>
-          <div className="setting__element setting__profileElement">
-            <div className="setting__profileImgElement">
-              {profileImg ? (
-                <img className="setting__profileImg" src={profileImg} />
-              ) : (
-                <img
-                  className="setting__profileImg"
-                  src={`${process.env.PUBLIC_URL}/404.png`}
-                />
-              )}
-              <input
-                className="setting-profileImgInput"
-                type="file"
-                accept="image/*"
-                id="profileImg"
-                onChange={uploadImg}
-              />
-              <Button
-                type="profile"
-                name="이미지 업로드"
-                onClick={clickInputFileImg}
-              />
-              <Button type="profile" name="이미지 제거" onClick={deleteImg} />
-            </div>
-          </div>
 
-          <SettingElement
-            name="수정"
-            type="profile1"
-            onClick={updateProfile}
-            prevValue={profile}
-          ></SettingElement>
-          <Separator type="row" />
-        </>
-      )}
+        {windowWidth ? <Separator type="col" /> : <Separator type="row" />}
+        <SettingElement
+          name="수정"
+          type="profile"
+          onClick={updateProfile}
+          prevValue={profile}
+        ></SettingElement>
+      </div>
+      {!windowWidth && <Separator type="row" />}
 
       <SettingElement
         title="로그 제목"

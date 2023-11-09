@@ -33,20 +33,53 @@ const SettingElement = ({
 
   if (type === "profile") {
     return (
-      <div>
-        {change ? (
-          <div>
-            <ProfileElement prevValue={value.name} type="name" />
-            <ProfileElement prevValue={value.describe} type="describe" />
+      <>
+        {windowWidth ? (
+          <div className="setting__subElement">
+            {change ? (
+              <>
+                <ProfileElement prevValue={value.name} type="name" />
+                <ProfileElement prevValue={value.describe} type="describe" />
+              </>
+            ) : (
+              <>
+                <ProfileElement prevValue={value.name} />
+                <ProfileElement prevValue={value.describe} />
+              </>
+            )}
+            <Button type="underscore" name={name} onClick={func} />
           </div>
         ) : (
-          <div>
-            <ProfileElement prevValue={value.name} />
-            <ProfileElement prevValue={value.describe} />
+          <div className="setting__element setting__element--col">
+            <div className="setting__element setting__element--phone">
+              {change ? (
+                <>
+                  <div className="setting__title">{value.name}</div>
+                  <div className="setting__element setting__element--between">
+                    <div className="setting__element setting__element--between">
+                      <div className="setting__subElement">
+                        {value.describe}
+                      </div>
+                      <Button type="underscore" name={name} onClick={func} />
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="setting__element setting__element--between">
+                  <div className="setting__subElement">
+                    <ProfileElement prevValue={value.name} />
+                    <ProfileElement prevValue={value.describe} />
+                  </div>
+                  <Button type="underscore" name={name} onClick={func} />
+                </div>
+              )}
+            </div>
+            {description ? (
+              <div className="setting__description">{description}</div>
+            ) : null}
           </div>
         )}
-        <Button type="setting" name={name} onClick={func} />
-      </div>
+      </>
     );
   } else if (type === "profile1") {
     return (
@@ -60,20 +93,20 @@ const SettingElement = ({
             <div>
               <div className="setting__title">{value.name}</div>
               <div className="setting__element setting__element--between">
-                <div className="setting__element setting__element--width setting__element--between">
+                <div className="setting__element setting__element--between">
                   <div className="setting__subElement">{value.describe}</div>
-                  <Button type="setting" name={name} onClick={func} />
+                  <Button type="underscore" name={name} onClick={func} />
                 </div>
               </div>
             </div>
           ) : (
             <div>
-              <div className="setting__element setting__element--width setting__element--between">
-                <div>
+              <div className="setting__element setting__element--between">
+                <div className="setting__element setting__element--col setting__subElement">
                   <ProfileElement prevValue={value.name} />
                   <ProfileElement prevValue={value.describe} />
                 </div>
-                <Button type="setting" name={name} onClick={func} />
+                <Button type="underscore" name={name} onClick={func} />
               </div>
             </div>
           )}
@@ -93,17 +126,19 @@ const SettingElement = ({
         >
           <div className="setting__title">{title}</div>
           <div className="setting__element setting__element--between">
-            <div className="setting__element setting__element--width setting__element--between">
+            <div className="setting__element setting__element--between">
               {change ? (
                 <div className="setting__subElement">{value}</div>
               ) : (
-                <input
-                  className="setting__subElement setting__input"
-                  value={value}
-                  onChange={(e) => setValue(e.target.value)}
-                />
+                <div className="setting__subElement">
+                  <input
+                    className="setting__input"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                  />
+                </div>
               )}
-              <Button type="setting" name={name} onClick={func} />
+              <Button type="underscore" name={name} onClick={func} />
             </div>
           </div>
         </div>
@@ -122,7 +157,7 @@ const SettingElement = ({
         >
           <div className="setting__title">{title}</div>
           <div className="setting__element setting__element--between">
-            <div className="setting__element setting__element--width setting__element--between">
+            <div className="setting__element setting__element--between">
               {change ? (
                 <div className="setting__subElement">
                   <SocialElement name="이메일" value={value.email} />
@@ -160,7 +195,7 @@ const SettingElement = ({
                   />
                 </div>
               )}
-              <Button type="setting" name={name} onClick={func} />
+              <Button type="underscore" name={name} onClick={func} />
             </div>
           </div>
         </div>
