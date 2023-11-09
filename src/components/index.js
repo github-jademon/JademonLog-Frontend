@@ -5,5 +5,5 @@ export { default as RadioButton } from "./setting/RadioElement";
 export { default as ProfileElement } from "./setting/ProfileElement";
 export { default as SocialElement } from "./setting/SocialElement";
 export { default as SettingElement } from "./setting/SettingElement";
-export { default as Separator } from "./setting/Separator";
+export { default as Separator } from "./common/Separator";
 export { default as HeaderElement } from "./header/HeaderElement";

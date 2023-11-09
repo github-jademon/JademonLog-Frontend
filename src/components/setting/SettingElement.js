@@ -160,11 +160,11 @@ const SettingElement = ({
             <div className="setting__element setting__element--between">
               {change ? (
                 <div className="setting__subElement">
-                  <SocialElement name="이메일" value={value.email} />
-                  <SocialElement name="깃허브" value={value.github} />
-                  <SocialElement name="트위터" value={value.twitter} />
-                  <SocialElement name="페이스북" value={value.facebook} />
-                  <SocialElement name="홈페이지" value={value.homepage} />
+                  <SocialElement name="이메일" prevValue={value.email} />
+                  <SocialElement name="깃허브" prevValue={value.github} />
+                  <SocialElement name="트위터" prevValue={value.twitter} />
+                  <SocialElement name="페이스북" prevValue={value.facebook} />
+                  <SocialElement name="홈페이지" prevValue={value.homepage} />
                 </div>
               ) : (
                 <div className="setting__subElement">
