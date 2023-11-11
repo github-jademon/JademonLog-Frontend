@@ -25,6 +25,7 @@ const SettingElement = ({
         window.matchMedia("screen and (min-width: 768px)").matches
       );
     }
+    resize();
     window.addEventListener("resize", resize);
     return () => {
       document.removeEventListener("resize", resize);

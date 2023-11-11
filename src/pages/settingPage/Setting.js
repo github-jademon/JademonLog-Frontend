@@ -179,8 +179,6 @@ const Setting = () => {
     // });1
   };
 
-  console.log(window.matchMedia("screen and (min-width: 768px)").matches);
-
   return (
     <div className="container setting__container container--768">
       <div className="setting__element setting__profileElement">
