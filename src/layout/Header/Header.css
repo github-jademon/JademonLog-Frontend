@@ -106,3 +106,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.headerButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 170px;
+}

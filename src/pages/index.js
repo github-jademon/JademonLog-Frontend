@@ -6,3 +6,5 @@ export { default as Upload } from "./uploadPage/Upload.js";
 export { default as Save } from "./savePage/Save.js";
 export { default as NotFound } from "./notFoundPage/NotFound.js";
 export { default as Setting } from "./settingPage/Setting.js";
+export { default as Login } from "./loginPage/Login.js";
+export { default as SignUp } from "./signUpPage/SignUp.js";

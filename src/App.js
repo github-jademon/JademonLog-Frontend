@@ -2,12 +2,14 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "layout/header/Header";
 import {
+  Login,
   Main,
   Mypage,
   NotFound,
   PostDetail,
   Save,
   Setting,
+  SignUp,
   Upload,
   Write,
 } from "./pages";
@@ -44,6 +46,7 @@ function App() {
             <Route path="/saves" element={<Save />}></Route>
             <Route path="/lists" element={<Mypage />}></Route>
             <Route path="/setting" element={<Setting />}></Route>
+            {/* <Route path="/signup" element={<SignUp />}></Route> */}
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
