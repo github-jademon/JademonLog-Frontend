@@ -15,7 +15,7 @@ const sampleData = {
     name: "hello",
   },
   likesCount: 2,
-  value: `
+  source: `
   ### 상태관리란?
   웹페이지 상에서 눈으로 확인할 수 있는 모든 데이터뿐 아니라 서버와 주고받는 눈으로 확인할 수 없는 모든 데이터를 **상태**라 하고 이 변화하는 상태들을 관리하는 것을 **상태관리**라고 합니다.
   
@@ -158,7 +158,7 @@ const Post = () => {
       </div>
       <MDEditor.Markdown
         className="postDetail__content"
-        source={sampleData.value}
+        source={sampleData.source}
       />
     </div>
   );

@@ -1,0 +1,121 @@
+.upload__container {
+  margin: 100px auto 10px auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload__elements {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.upload__element {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  margin: 5px 0;
+}
+
+.upload__title {
+  font-weight: 600;
+  padding: 0 0 5px 0;
+}
+
+.upload__previewElement {
+  margin: 34px 0 5px 0;
+}
+
+.upload__previewTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.upload__count {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  padding: 0 0 2px 0;
+}
+
+.upload__count--red {
+  color: red;
+}
+
+.upload__descript {
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 4px 0px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  background-color: #f8f9fa;
+  padding: 10px;
+  height: 100%;
+  resize: none;
+  outline: none;
+  word-break: break-all;
+}
+
+.upload__thumbnail {
+  width: 100%;
+}
+
+.upload__thumbnailImgElement {
+  height: 220px;
+  margin: 0 0 8px 0;
+}
+
+.upload__thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload__buttonCotainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload__button {
+  width: 49%;
+}
+
+.upload__radioButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  align-items: center;
+}
+
+.upload__radioButtonElement {
+  width: 49%;
+}
+
+.upload__radioButton {
+  display: none;
+}
+
+.upload__radioButton:checked + label {
+  border: red 1px solid;
+  color: red;
+}
+
+.upload__radioLabel {
+  width: 100%;
+}
+
+.upload__urlContainer {
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 4px 0px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  background-color: #f8f9fa;
+  padding: 10px;
+  display: flex;
+  height: 22px;
+  align-items: center;
+}
+
+.upload__urlUsername {
+  color: #868e96;
+}
+
+.upload__urlInput {
+  background-color: #f8f9fa;
+}

@@ -37,6 +37,12 @@ const Button = ({ type, name, onClick }) => {
         {name}
       </div>
     );
+  } else if (type === "upload") {
+    return (
+      <div className="button upload__button" onClick={onClick}>
+        {name}
+      </div>
+    );
   } else {
     return (
       <div className="button" onClick={onClick}>
