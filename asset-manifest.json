@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/JademonLog-Frontend/static/css/main.9a8319ea.css",
+    "main.js": "/JademonLog-Frontend/static/js/main.dbbf6251.js",
+    "static/js/787.fbc45765.chunk.js": "/JademonLog-Frontend/static/js/787.fbc45765.chunk.js",
+    "index.html": "/JademonLog-Frontend/index.html",
+    "main.9a8319ea.css.map": "/JademonLog-Frontend/static/css/main.9a8319ea.css.map",
+    "main.dbbf6251.js.map": "/JademonLog-Frontend/static/js/main.dbbf6251.js.map",
+    "787.fbc45765.chunk.js.map": "/JademonLog-Frontend/static/js/787.fbc45765.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a8319ea.css",
+    "static/js/main.dbbf6251.js"
+  ]
+}
