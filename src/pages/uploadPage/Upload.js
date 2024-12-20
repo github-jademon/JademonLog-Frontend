@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Upload.css";
 import { Button, Separator } from "components";
 
@@ -9,6 +10,7 @@ const sampleData = {
 };
 
 const Upload = () => {
+  let nav = useNavigate();
   const [profileImg, setProfileImg] = useState(sampleData.img);
   const [descript, setDescript] = useState(sampleData.descript);
   const [count, setCount] = useState(sampleData.descript.length);
@@ -16,7 +18,12 @@ const Upload = () => {
   const [urlTitle, setUrlTitle] = useState(sampleData.title);
 
   function cancle() {
-    window.location.href = "/";
+    nav(-1);
+  }
+
+  function upload() {
+    //nav('/');
+    alert('업로드하였습니다.')
   }
 
   const uploadImg = (e) => {
@@ -165,6 +172,12 @@ const Upload = () => {
               <div>시리즈 설정</div>
               <div>시리즈에 추가하기</div>
             </div> */}
+      </div>
+      <div className="uploadBar__container">
+        <div className="button upload__button" onClick={cancle}>취소</div>
+        <div className="button upload__button" onClick={upload}>
+          출간하기
+        </div>
       </div>
     </div>
   );

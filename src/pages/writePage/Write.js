@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Editor } from "../../components";
 import "./Write.css";
 
 const Write = () => {
+  let nav = useNavigate();
+
   const [title, setTitle] = useState();
   const [md, setMd] = useState("# Hello World");
   function onEditorChange(value) {
@@ -10,11 +13,13 @@ const Write = () => {
   }
 
   function cancle() {
-    window.location.href = "/";
+    // window.location.href = "/";
+    nav('/');
   }
 
   function upload() {
-    window.location.href = "/upload";
+    // window.location.href = "/upload";
+    nav('/upload');
   }
 
   return (
